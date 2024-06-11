@@ -14,10 +14,10 @@ function Game() {
       if (cards[firstIndex] === cards[secondIndex]) {
         setMatchedCards(prev => [...prev, firstIndex, secondIndex]);
       }
-      const timeout = setTimeout(() => setFlippedCards([]), 1000);
+      const timeout = setTimeout(() => setFlippedCards([]), 500);
       return () => clearTimeout(timeout); // Nettoyage de l'effet
     }
-  }, [flippedCards, cards]); // Notez que matchedCards n'est plus dans les dépendances
+  }, [flippedCards, cards]);
 
   const handleCardClick = (index) => {
     if (flippedCards.length < 2 && !flippedCards.includes(index) && !matchedCards.includes(index)) {
