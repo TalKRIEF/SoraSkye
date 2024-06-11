@@ -1,14 +1,12 @@
-import React from "react";
-import './App.css';
-import Counter from './counter'
+import React from 'react';
+import Game from './Game'; // Importation du composant Game
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Make it count</h1>
-      <div className="counter">
-        <Counter />
-      </div>
+      <h1>Memory Game</h1>
+      <Game /> {/* Inclusion du composant Game */}
     </div>
   );
 }
