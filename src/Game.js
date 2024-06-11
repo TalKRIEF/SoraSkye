@@ -1,38 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
+import NewGameButton from './NewGameButton';
+import generateCards from './generateCards';
 
-// Fonction pour générer les cartes mélangées
-function generateCards() {
-  // Génère un tableau de paires de cartes
-  const cards = [...Array(6).keys()].flatMap(i => [i, i]);
-  // Mélange les cartes de manière aléatoire
-  return cards.sort(() => Math.random() - 0.5);
-}
-
-// Composant principal du jeu
 function Game() {
-  // Définition des états du jeu
-  const [cards, setCards] = useState(generateCards()); // Cartes du jeu
-  const [flippedCards, setFlippedCards] = useState([]); // Cartes retournées
-  const [matchedCards, setMatchedCards] = useState([]); // Cartes trouvées
+  const [cards, setCards] = useState(generateCards());
+  const [flippedCards, setFlippedCards] = useState([]);
+  const [matchedCards, setMatchedCards] = useState([]);
 
-  // Effet pour réinitialiser les cartes si plus de deux cartes sont retournées
   useEffect(() => {
     if (flippedCards.length === 2) {
-      const [firstIndex, secondIndex] = flippedCards; // Indices des deux cartes retournées
-      if (cards[firstIndex] === cards[secondIndex]) { // Vérification si les cartes sont identiques
-        setMatchedCards([...matchedCards, firstIndex, secondIndex]); // Ajout des cartes trouvées aux cartes correspondantes
+      const [firstIndex, secondIndex] = flippedCards;
+      if (cards[firstIndex] === cards[secondIndex]) {
+        setMatchedCards(prev => [...prev, firstIndex, secondIndex]);
       }
-      // Réinitialisation des cartes retournées après 1 seconde
-      setTimeout(() => setFlippedCards([]), 750);
+      const timeout = setTimeout(() => setFlippedCards([]), 1000);
+      return () => clearTimeout(timeout); // Nettoyage de l'effet
     }
-  }, [flippedCards]); // Exécution de l'effet lorsque flippedCards change
+  }, [flippedCards, cards]); // Notez que matchedCards n'est plus dans les dépendances
 
-  // Fonction pour gérer le clic sur une carte
   const handleCardClick = (index) => {
     if (flippedCards.length < 2 && !flippedCards.includes(index) && !matchedCards.includes(index)) {
-      // Ajout de l'index de la carte retournée à flippedCards
-      setFlippedCards([...flippedCards, index]);
+      setFlippedCards(prev => [...prev, index]);
     }
   };
 
@@ -47,6 +36,13 @@ function Game() {
           onClick={() => handleCardClick(index)}
         />
       ))}
+      <NewGameButton
+        matchedCards={matchedCards}
+        totalCards={cards.length}
+        setCards={setCards}
+        setFlippedCards={setFlippedCards}
+        setMatchedCards={setMatchedCards}
+      />
     </div>
   );
 }

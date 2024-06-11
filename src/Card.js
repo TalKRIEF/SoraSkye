@@ -1,10 +1,6 @@
 import React from 'react';
 
-// Composant Card
-function Card(props) {
-  // Déstructuration des props dans une variable
-  const { index, card, isFlipped, onClick } = props;
-
+function Card({ index, card, isFlipped, onClick }) {
   return (
     <div className={`card ${isFlipped ? 'flipped' : ''}`} onClick={onClick}>
       <div className="card-inner">
