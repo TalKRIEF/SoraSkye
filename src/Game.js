@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
-import NewGameButton from './NewGameButton';
+import Congrats from './Congrats';
 import generateCards from './generateCards';
+import NouvellePartie from './NouvellePartie';
 
 function Game() {
   const [cards, setCards] = useState(generateCards());
@@ -36,12 +37,14 @@ function Game() {
           onClick={() => handleCardClick(index)}
         />
       ))}
-      <NewGameButton
+        <NouvellePartie
+          setCards = {setCards}
+          setFlippedCards={setFlippedCards}
+          setMatchedCards={setMatchedCards}
+        />
+      <Congrats
         matchedCards={matchedCards}
         totalCards={cards.length}
-        setCards={setCards}
-        setFlippedCards={setFlippedCards}
-        setMatchedCards={setMatchedCards}
       />
     </div>
   );

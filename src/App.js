@@ -1,12 +1,11 @@
 import React from 'react';
-import Game from './Game'; // Importation du composant Game
-
+import Game from './Game';
 
 function App() {
   return (
     <div className="App">
       <h1>Memory Game</h1>
-      <Game /> {/* Inclusion du composant Game */}
+      <Game />
     </div>
   );
 }
