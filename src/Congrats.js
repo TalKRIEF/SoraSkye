@@ -12,10 +12,7 @@ function Congrats({ matchedCards, totalCards }) {
 
   return (
     isGameOver && (
-      <div className="game-over">
         <p>Félicitations ! Vous avez trouvé toutes les paires !</p>
-        {/* <button onClick={resetGame}>Nouvelle partie</button> */}
-      </div>
     )
   );
 }

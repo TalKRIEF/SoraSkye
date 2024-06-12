@@ -1,14 +1,15 @@
 import React from 'react';
 
-function Card({ index, card, isFlipped, onClick }) {
+function Card(props) {
+  const { index, card, isFlipped, onClick } = props;
+
   return (
     <div className={`card ${isFlipped ? 'flipped' : ''}`} onClick={onClick}>
       <div className="card-inner">
         <div className="card-front">
-          {/* Affichage de la face avant de la carte */}
         </div>
         <div className="card-back">
-          {card} {/* Affichage de la valeur de la carte */}
+          <img src={`/imgs/${card}.png`} alt={`Card ${card}`} />
         </div>
       </div>
     </div>

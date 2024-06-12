@@ -15,7 +15,7 @@ function Game() {
       if (cards[firstIndex] === cards[secondIndex]) {
         setMatchedCards(prev => [...prev, firstIndex, secondIndex]);
       }
-      const timeout = setTimeout(() => setFlippedCards([]), 500);
+      const timeout = setTimeout(() => setFlippedCards([]), 1000);
       return () => clearTimeout(timeout); // Nettoyage de l'effet
     }
   }, [flippedCards, cards]);
@@ -27,25 +27,29 @@ function Game() {
   };
 
   return (
-    <div className="game-board">
-      {cards.map((card, index) => (
-        <Card
-          key={index}
-          index={index}
-          card={card}
-          isFlipped={flippedCards.includes(index) || matchedCards.includes(index)}
-          onClick={() => handleCardClick(index)}
-        />
-      ))}
-        <NouvellePartie
-          setCards = {setCards}
-          setFlippedCards={setFlippedCards}
-          setMatchedCards={setMatchedCards}
-        />
+    <div className='wrapper'>
+      <NouvellePartie
+        setCards = {setCards}
+        setFlippedCards={setFlippedCards}
+        setMatchedCards={setMatchedCards}
+      />
       <Congrats
         matchedCards={matchedCards}
         totalCards={cards.length}
       />
+      <div className='gameboard-container'>
+        <div className="game-board">
+          {cards.map((card, index) => (
+            <Card
+              key={index}
+              index={index}
+              card={card}
+              isFlipped={flippedCards.includes(index) || matchedCards.includes(index)}
+              onClick={() => handleCardClick(index)}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
