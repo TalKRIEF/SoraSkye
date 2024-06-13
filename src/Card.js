@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Card(props) {
-  const { index, card, isFlipped, onClick } = props;
+  const { card, isFlipped, onClick } = props;
 
   return (
     <div className={`card ${isFlipped ? 'flipped' : ''}`} onClick={onClick}>

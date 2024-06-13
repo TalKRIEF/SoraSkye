@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
   height: 100vh;
@@ -90,4 +96,43 @@
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+}
+
+.compteur {
+  color: rgb(29, 28, 28);
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer {
+  margin-top: 6vh;
+  text-align: center;
+  padding: 8px;
+  background-color: #648fb9;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.lien-insta {
+  text-decoration: none;
 }

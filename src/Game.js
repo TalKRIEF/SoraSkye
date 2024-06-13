@@ -3,8 +3,9 @@ import Card from './Card';
 import Congrats from './Congrats';
 import generateCards from './generateCards';
 import NouvellePartie from './NouvellePartie';
+import Counter from './Counter';
 
-function Game() {
+function Game({count, setCount}) {
   const [cards, setCards] = useState(generateCards());
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
@@ -23,16 +24,21 @@ function Game() {
   const handleCardClick = (index) => {
     if (flippedCards.length < 2 && !flippedCards.includes(index) && !matchedCards.includes(index)) {
       setFlippedCards(prev => [...prev, index]);
+      setCount(prevCount => prevCount + 1);
     }
   };
 
   return (
     <div className='wrapper'>
+    <div className='header'>
       <NouvellePartie
         setCards = {setCards}
         setFlippedCards={setFlippedCards}
         setMatchedCards={setMatchedCards}
+        setCount={setCount}
       />
+      <Counter count={count} />
+    </div>
       <Congrats
         matchedCards={matchedCards}
         totalCards={cards.length}

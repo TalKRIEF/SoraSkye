@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Game from './Game';
-
+import Footer from './Footer';
 
 function App() {
+  const [count, setCount] = useState(0);
+
   return (
     <div className="App">
       <h1>Memory Game</h1>
-      <Game />
+      <Game
+      count={count}
+      setCount={setCount}
+      />
+      <Footer />
     </div>
   );
 }
