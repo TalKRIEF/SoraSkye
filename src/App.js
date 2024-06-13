@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Memory Game</h1>
+      <h1 className='Main-title'>Memory Game</h1>
       <Game
       count={count}
       setCount={setCount}
