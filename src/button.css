@@ -31,10 +31,9 @@
 @media (max-width: 600px) {
 
   .newGameButton {
-    padding: 12px 12px;
-    font-size: 12px;
+    padding: 8px 10px;
+    font-size: 10px;
     border-radius: 10px;
-    margin: 6px;
   }
 }
 
@@ -42,9 +41,8 @@
 @media (max-width: 480px) {
 
   .newGameButton {
-    padding: 12px 12px;
-    font-size: 12px;
+    padding: 8px 10px;
+    font-size: 10px;
     border-radius: 10px;
-    margin: 6px;
   }
 }

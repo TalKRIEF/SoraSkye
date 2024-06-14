@@ -2,10 +2,6 @@ import React from 'react';
 
 const Welcome = () => {
   return (
-    //   <div className='logoAndTitle'>
-    //     <a href='talkrief-memory.vercel.app'><img src="./imgs/icon.png" className='Clipsoulogo' alt="Logo"></img></a>
-    //     <h1 className='Main-title'>Memory Game</h1>
-    //   </div>
     <div className='welcome-title-div'>
       <div class="banner">
         <div class="container">

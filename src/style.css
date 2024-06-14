@@ -4,14 +4,6 @@
   box-sizing: border-box;
 }
 
-/* body {
-  background-image: url('/imgs/background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-} */
-
 .App {
   display: flex;
   flex-direction: column;
@@ -149,7 +141,7 @@
 
 .banner {
   padding: 100px;
-  background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('/imgs/banner.jpeg');
+  background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('/imgs/banner.webp');
   background-size: cover;
   background-position: 100% 10%;
 }
@@ -246,13 +238,6 @@
     height: 100px;
   }
 
-  .newGameButton {
-    padding: 8px 10px;
-    font-size: 10px;
-    border-radius: 12px;
-    margin: 6px;
-  }
-
   .Main-title {
     font-size: 16px;
   }
@@ -273,12 +258,5 @@
   .card {
     width: 60px;
     height: 90px;
-  }
-
-  .newGameButton {
-    padding: 8px 10px;
-    font-size: 10px;
-    border-radius: 12px;
-    /* margin: 6px; */
   }
 }
