@@ -30,32 +30,32 @@ function Game({count, setCount}) {
 
   return (
     <div className='wrapper'>
-    <div className='header'>
-      <NouvellePartie
-        setCards = {setCards}
-        setFlippedCards={setFlippedCards}
-        setMatchedCards={setMatchedCards}
-        setCount={setCount}
-      />
-      <Counter count={count} />
-    </div>
-      <Congrats
-        matchedCards={matchedCards}
-        totalCards={cards.length}
-        count={count}
-      />
-      <div className='gameboard-container'>
-        <div className="game-board">
-          {cards.map((card, index) => (
-            <Card
-              key={index}
-              index={index}
-              card={card}
-              isFlipped={flippedCards.includes(index) || matchedCards.includes(index)}
-              onClick={() => handleCardClick(index)}
-            />
-          ))}
-        </div>
+      <div className='header'>
+        <NouvellePartie
+          setCards = {setCards}
+          setFlippedCards={setFlippedCards}
+          setMatchedCards={setMatchedCards}
+          setCount={setCount}
+        />
+        <Counter count={count} />
+      </div>
+    <Congrats
+      matchedCards={matchedCards}
+      totalCards={cards.length}
+      count={count}
+    />
+    <div className='gameboard-container'>
+      <div className="game-board">
+        {cards.map((card, index) => (
+          <Card
+            key={index}
+            index={index}
+            card={card}
+            isFlipped={flippedCards.includes(index) || matchedCards.includes(index)}
+            onClick={() => handleCardClick(index)}
+          />
+        ))}
+      </div>
       </div>
     </div>
   );

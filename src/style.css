@@ -21,27 +21,38 @@
 }
 
 .Main-title {
-  display: flex;
   color: rgb(13, 27, 44);
-  margin-bottom: 1vh;
-  font-size: 1.5em;
+  font-size: 1.75em;
+  color: #251f38;
 }
 
 .Secondary-title {
-  color: rgb(13, 27, 44);
+  color: rgb(247, 247, 247);
   font-size: 16px;
 }
 
 .welcome-title-div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 2vh 0 2vh 0;
+  margin: 0 0 2vh 0;
 }
 
 .Clipsoulogo {
-  width: 10vw;
+  width: 6vw;
   height: auto;
+}
+
+.title-wrappers {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.logoAndTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vide {
+  width: 8vw;
 }
 
 .gameboard-container {
@@ -136,6 +147,20 @@
   font-weight: bold;
 }
 
+.banner {
+  padding: 100px;
+  background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('/imgs/banner.jpeg');
+  background-size: cover;
+  background-position: 100% 10%;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
 
 * {
   margin: 0;
@@ -184,10 +209,18 @@
     width: 120px;
     height: 160px;
   }
+
+  .banner {
+    padding: 100px;
+  }
 }
 
 /* Pour les iPad et tablettes en mode portrait */
 @media (max-width: 768px) {
+  .compteur {
+    font-size: 12px;
+  }
+
   .game-board {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -195,6 +228,10 @@
   .card {
     width: 80px;
     height: 120px;
+  }
+
+  .banner {
+    padding: 25px;
   }
 }
 
@@ -210,8 +247,8 @@
   }
 
   .newGameButton {
-    padding: 4px 8px;
-    font-size: 8px;
+    padding: 8px 10px;
+    font-size: 10px;
     border-radius: 12px;
     margin: 6px;
   }
@@ -222,11 +259,13 @@
 
   .Secondary-title {
     font-size: 10px;
+    margin-top: 2vh;
   }
 }
 
 /* Pour les téléphones en mode portrait */
 @media (max-width: 480px) {
+
   .game-board {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -237,9 +276,9 @@
   }
 
   .newGameButton {
-    padding: 4px 8px;
-    font-size: 8px;
+    padding: 8px 10px;
+    font-size: 10px;
     border-radius: 12px;
-    margin: 6px;
+    /* margin: 6px; */
   }
 }
