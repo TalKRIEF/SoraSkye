@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+/* body {
+  background-image: url('/imgs/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+} */
+
 .App {
   display: flex;
   flex-direction: column;
@@ -12,8 +20,9 @@
   height: 100vh;
 }
 
-.main-title {
-  color: rgb(209, 216, 226);
+.Main-title {
+  color: rgb(13, 27, 44);
+  margin-bottom: 1vh;
 }
 
 
@@ -144,6 +153,67 @@
   color: rgb(174, 236, 216);
 }
 
-.Main-title {
-  margin-bottom: 1vh;
+/* RESPONSIVE PART */
+
+
+/* Pour les tablettes en mode paysage */
+@media (max-width: 1024px) {
+  .game-board {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card {
+    width: 120px;
+    height: 160px;
+  }
+}
+
+/* Pour les iPad et tablettes en mode portrait */
+@media (max-width: 768px) {
+  .game-board {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card {
+    width: 80px;
+    height: 120px;
+  }
+}
+
+/* Pour les grands téléphones en mode paysage */
+@media (max-width: 600px) {
+  .game-board {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card {
+    width: 70px;
+    height: 100px;
+  }
+
+  .newGameButton {
+    padding: 4px 8px;
+    font-size: 8px;
+    border-radius: 12px;
+    margin: 6px;
+  }
+}
+
+/* Pour les téléphones en mode portrait */
+@media (max-width: 480px) {
+  .game-board {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card {
+    width: 60px;
+    height: 90px;
+  }
+
+  .newGameButton {
+    padding: 4px 8px;
+    font-size: 8px;
+    border-radius: 12px;
+    margin: 6px;
+  }
 }

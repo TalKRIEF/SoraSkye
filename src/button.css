@@ -3,13 +3,13 @@
   border: none;
   color: white;
   padding: 16px 32px;
+  font-size: 16px;
+  border-radius: 12px;
+  margin: 12px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 12px;
   cursor: pointer;
-  border-radius: 12px;
   transition: background-color 0.3s ease, transform 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -23,4 +23,28 @@
 .newGameButton:active {
   background-color: #3e8e41;
   transform: scale(0.95);
+}
+
+
+/* RESPONSIVE PARTIE */
+
+@media (max-width: 600px) {
+
+  .newGameButton {
+    padding: 12px 12px;
+    font-size: 12px;
+    border-radius: 10px;
+    margin: 6px;
+  }
+}
+
+/* Pour les téléphones en mode portrait */
+@media (max-width: 480px) {
+
+  .newGameButton {
+    padding: 12px 12px;
+    font-size: 12px;
+    border-radius: 10px;
+    margin: 6px;
+  }
 }
