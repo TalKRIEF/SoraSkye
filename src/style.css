@@ -21,13 +21,27 @@
 }
 
 .Main-title {
+  display: flex;
   color: rgb(13, 27, 44);
   margin-bottom: 1vh;
+  font-size: 1.5em;
 }
 
 .Secondary-title {
   color: rgb(13, 27, 44);
-  font-size: 18px;
+  font-size: 16px;
+}
+
+.welcome-title-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2vh 0 2vh 0;
+}
+
+.Clipsoulogo {
+  width: 10vw;
+  height: auto;
 }
 
 .gameboard-container {
@@ -83,7 +97,7 @@
 }
 
 .card-front {
-  background: #ccc;
+  background: #e0e1e4;
 }
 
 .card-back {
@@ -200,6 +214,14 @@
     font-size: 8px;
     border-radius: 12px;
     margin: 6px;
+  }
+
+  .Main-title {
+    font-size: 16px;
+  }
+
+  .Secondary-title {
+    font-size: 10px;
   }
 }
 
