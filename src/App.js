@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <h1 className='Main-title'>Memory Game</h1>
+      <h3 className='Secondary-title'>Cliquez sur les cartes pour trouver les paires en un minimum de coups !</h3>
       <Game
       count={count}
       setCount={setCount}

@@ -42,6 +42,7 @@ function Game({count, setCount}) {
       <Congrats
         matchedCards={matchedCards}
         totalCards={cards.length}
+        count={count}
       />
       <div className='gameboard-container'>
         <div className="game-board">

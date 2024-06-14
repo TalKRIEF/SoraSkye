@@ -25,6 +25,10 @@
   margin-bottom: 1vh;
 }
 
+.Secondary-title {
+  color: rgb(13, 27, 44);
+  font-size: 18px;
+}
 
 .gameboard-container {
   display: flex;
