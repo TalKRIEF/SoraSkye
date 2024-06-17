@@ -226,6 +226,10 @@
   .banner {
     padding: 100px;
   }
+
+  .difficult-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /* Pour les iPad et tablettes en mode portrait */
@@ -270,6 +274,10 @@
   .Secondary-title {
     font-size: 10px;
     margin-top: 2vh;
+  }
+
+  .difficult-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
