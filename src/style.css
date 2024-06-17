@@ -4,12 +4,17 @@
   box-sizing: border-box;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .App {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-  height: 100vh;
 }
 
 .Main-title {
@@ -23,13 +28,15 @@
   font-size: 16px;
 }
 
-.welcome-title-div {
-  margin: 0 0 2vh 0;
+.banner {
+  padding: 100px;
+  background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('/imgs/banner.webp');
+  background-size: cover;
+  background-position: 100% 10%;
 }
 
-.Clipsoulogo {
-  width: 6vw;
-  height: auto;
+.welcome-title-div {
+  margin: 0 0 2vh 0;
 }
 
 .title-wrappers {
@@ -43,6 +50,12 @@
   justify-content: center;
 }
 
+.animated-title span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  animation: jump 1s infinite ease-in-out;
+}
+
 .vide {
   width: 8vw;
 }
@@ -52,9 +65,25 @@
   justify-content: center;
 }
 
-.game-board {
+.easy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes pour facile */
+  grid-gap: 10px;
+  margin: 0 auto;
+  width: auto;
+}
+
+.game-board-normal {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin: 0 auto;
+  width: auto;
+}
+
+.difficult-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 10px;
   margin: 0 auto;
   width: auto;
@@ -139,12 +168,6 @@
   font-weight: bold;
 }
 
-.banner {
-  padding: 100px;
-  background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('/imgs/banner.webp');
-  background-size: cover;
-  background-position: 100% 10%;
-}
 
 .banner h1 {
   margin: 0;
@@ -152,12 +175,6 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 #root {
@@ -193,6 +210,10 @@
 
 /* Pour les tablettes en mode paysage */
 @media (max-width: 1024px) {
+  .compteur {
+    font-size: 14px;
+  }
+
   .game-board {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -229,6 +250,10 @@
 
 /* Pour les grands téléphones en mode paysage */
 @media (max-width: 600px) {
+  .compteur {
+    font-size: 10px;
+  }
+
   .game-board {
     grid-template-columns: repeat(3, 1fr);
   }

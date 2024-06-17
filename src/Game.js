@@ -4,11 +4,25 @@ import Congrats from './Congrats';
 import generateCards from './generateCards';
 import NouvellePartie from './NouvellePartie';
 import Counter from './Counter';
+import DifficultyButton from './DifficultyButtons';
+
 
 function Game({count, setCount}) {
-  const [cards, setCards] = useState(generateCards());
+  const [difficulty, setDifficulty] = useState(6)
+  const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
+
+  const resetGame = (difficulty) => {
+    setCards(generateCards(difficulty));
+    setFlippedCards([]);
+    setMatchedCards([]);
+    setCount(0);
+  }
+
+  useEffect(() => {
+    setCards(generateCards(difficulty));
+  }, [difficulty]);
 
   useEffect(() => {
     if (flippedCards.length === 2) {
@@ -28,7 +42,13 @@ function Game({count, setCount}) {
     }
   };
 
+    const handleDifficultyChange = (size) => {
+      setDifficulty(size);
+      resetGame();
+  };
+
   return (
+    <>
     <div className='wrapper'>
       <div className='header'>
         <NouvellePartie
@@ -36,6 +56,9 @@ function Game({count, setCount}) {
           setFlippedCards={setFlippedCards}
           setMatchedCards={setMatchedCards}
           setCount={setCount}
+        />
+        <DifficultyButton
+          setDifficulty={handleDifficultyChange}
         />
         <Counter count={count} />
       </div>
@@ -45,7 +68,7 @@ function Game({count, setCount}) {
       count={count}
     />
     <div className='gameboard-container'>
-      <div className="game-board">
+      <div className={`${difficulty === 3 ? 'easy-grid' : difficulty === 6 ? 'game-board-normal' : 'difficult-grid'}`}>
         {cards.map((card, index) => (
           <Card
             key={index}
@@ -58,6 +81,7 @@ function Game({count, setCount}) {
       </div>
       </div>
     </div>
+    </>
   );
 }
 

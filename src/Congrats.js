@@ -12,7 +12,6 @@ function Congrats({ matchedCards, totalCards, count }) {
       <p>Félicitations, vous avez trouvé toutes les paires !</p>
     )
   }
-
 }
 
 export default Congrats;
