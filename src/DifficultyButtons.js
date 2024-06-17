@@ -1,11 +1,19 @@
 import React  from 'react';
+import generateCards from './generateCards';
 
-const DifficultyButton = ({ setDifficulty}) => {
+const DifficultyButton = ({setDifficulty, setCards, setFlippedCards, setMatchedCards, setCount}) => {
+  const handleDifficultyChange = (size) => {
+    setDifficulty(size);
+    setCards(generateCards(size));
+    setCount(0);
+    setFlippedCards([]);
+    setMatchedCards([]);
+  }
   return (
     <>
-      <button className='difficulty-button' onClick={() => setDifficulty(3)}>Facile</button>
-      <button className='difficulty-button' onClick={() => setDifficulty(6)}>Normal</button>
-      <button className='difficulty-button' onClick={() => setDifficulty(12)}>Difficile</button>
+      <button className='difficulty-button' onClick={() => handleDifficultyChange(3)}>Facile</button>
+      <button className='difficulty-button' onClick={() => handleDifficultyChange(6)}>Normal</button>
+      <button className='difficulty-button' onClick={() => handleDifficultyChange(12)}>Difficile</button>
     </>
   );
 }

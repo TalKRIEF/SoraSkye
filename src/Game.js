@@ -8,17 +8,18 @@ import DifficultyButton from './DifficultyButtons';
 
 
 function Game({count, setCount}) {
-  const [difficulty, setDifficulty] = useState(6)
-  const [cards, setCards] = useState([]);
+  const [difficulty, setDifficulty] = useState(6);
+  const [cards, setCards] = useState(generateCards(difficulty));
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
 
   const resetGame = (difficulty) => {
-    setCards(generateCards(difficulty));
+    const newCards = generateCards(difficulty);
     setFlippedCards([]);
     setMatchedCards([]);
+    setCards(newCards);
     setCount(0);
-  }
+  };
 
   useEffect(() => {
     setCards(generateCards(difficulty));
@@ -42,43 +43,46 @@ function Game({count, setCount}) {
     }
   };
 
-    const handleDifficultyChange = (size) => {
-      setDifficulty(size);
-      resetGame();
-  };
-
   return (
     <>
     <div className='wrapper'>
       <div className='header'>
         <NouvellePartie
-          setCards = {setCards}
+          setDifficulty={setDifficulty}
+          setCards={setCards}
+          setFlippedCards={setFlippedCards}
+          setMatchedCards={setMatchedCards}
+          setCount={setCount}
+          difficulty={difficulty}
+        />
+        <DifficultyButton
+          setDifficulty={setDifficulty}
+          setCards={setCards}
           setFlippedCards={setFlippedCards}
           setMatchedCards={setMatchedCards}
           setCount={setCount}
         />
-        <DifficultyButton
-          setDifficulty={handleDifficultyChange}
-        />
         <Counter count={count} />
       </div>
-    <Congrats
-      matchedCards={matchedCards}
-      totalCards={cards.length}
-      count={count}
-    />
-    <div className='gameboard-container'>
-      <div className={`${difficulty === 3 ? 'easy-grid' : difficulty === 6 ? 'game-board-normal' : 'difficult-grid'}`}>
-        {cards.map((card, index) => (
-          <Card
-            key={index}
-            index={index}
-            card={card}
-            isFlipped={flippedCards.includes(index) || matchedCards.includes(index)}
-            onClick={() => handleCardClick(index)}
-          />
-        ))}
-      </div>
+      <Congrats
+        matchedCards={matchedCards}
+        totalCards={cards.length}
+        count={count}
+      />
+      <div className='gameboard-container'>
+        <div className={`${difficulty === 3 ? 'easy-grid' : difficulty === 6 ? 'game-board-normal' : 'difficult-grid'}`}>
+        {/* <div className='game-board-normal'> */}
+          {cards.map((card, index) => (
+            <Card
+              key={index}
+              index={index}
+              card={card}
+              isFlipped={flippedCards.includes(index) || matchedCards.includes(index)}
+              onClick={() => handleCardClick(index)}
+            />
+          ))}
+        {/* </div> */}
+        </div>
       </div>
     </div>
     </>
