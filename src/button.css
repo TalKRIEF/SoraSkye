@@ -11,7 +11,7 @@
   display: inline-block;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .newGameButton:hover {
@@ -31,15 +31,22 @@
   padding: 16px 32px;
   font-size: 16px;
   background-color: rgb(32, 90, 167);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   color: white;
   border-radius: 14px;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .difficulty-button:hover {
   transform: scale(1.05);
+}
+
+.difficulty-button:active {
+  background-color: rgb(29, 76, 131);
+  transform: scale(0.95);
 }
 
 

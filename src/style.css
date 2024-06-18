@@ -41,23 +41,6 @@
 
 .title-wrappers {
   text-align: center;
-  flex-grow: 1;
-}
-
-.logoAndTitle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.animated-title span {
-  display: inline-block;
-  transition: transform 0.2s ease;
-  animation: jump 1s infinite ease-in-out;
-}
-
-.vide {
-  width: 8vw;
 }
 
 .gameboard-container {
@@ -67,7 +50,7 @@
 
 .easy-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colonnes pour facile */
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   margin: 0 auto;
   width: auto;
@@ -99,7 +82,7 @@
 }
 
 .card:hover {
-  transform: scale(1.02);
+  transform: scale(1.04);
 
 }
 
@@ -148,20 +131,7 @@
   object-fit: cover;
 }
 
-.game-over {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.game-over button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
 .compteur {
-  color: rgb(29, 28, 28);
   text-align: center;
   display: inline-block;
   font-size: 16px;
@@ -199,10 +169,15 @@
 
 .lien-insta {
   text-decoration: none;
+  color: yellow;
 }
 
 .counter-color {
   color: rgb(174, 236, 216);
+}
+
+.nb-coups {
+  color: rgb(106, 158, 240);
 }
 
 /* RESPONSIVE PART */
