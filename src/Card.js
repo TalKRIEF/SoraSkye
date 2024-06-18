@@ -9,7 +9,7 @@ function Card(props) {
         <div className="card-front">
         </div>
         <div className="card-back">
-          <img src={`/imgs/${card}.webp`} alt={`Card ${card}`} />
+          <img src={`/imgs/${card}.webp`} loading="lazy" alt={`Card ${card}`} />
         </div>
       </div>
     </div>

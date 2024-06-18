@@ -30,7 +30,7 @@
 
 .banner {
   padding: 100px;
-  background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('/imgs/banner.webp');
+  background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('/imgs/compressed-banner.webp');
   background-size: cover;
   background-position: 100% 10%;
 }
@@ -221,10 +221,6 @@
   .card {
     width: 120px;
     height: 160px;
-  }
-
-  .banner {
-    padding: 100px;
   }
 
   .difficult-grid {

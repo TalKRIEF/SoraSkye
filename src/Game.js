@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Card from './Card';
 import Congrats from './Congrats';
 import generateCards from './generateCards';
@@ -13,17 +13,17 @@ function Game({count, setCount}) {
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
 
-  const resetGame = (difficulty) => {
+  const resetGame = useCallback(() => {
     const newCards = generateCards(difficulty);
     setFlippedCards([]);
     setMatchedCards([]);
     setCards(newCards);
     setCount(0);
-  };
+  }, [difficulty, setCount]);
 
   useEffect(() => {
-    setCards(generateCards(difficulty));
-  }, [difficulty]);
+    resetGame();
+  }, [difficulty, resetGame]);
 
   useEffect(() => {
     if (flippedCards.length === 2) {
@@ -36,24 +36,26 @@ function Game({count, setCount}) {
     }
   }, [flippedCards, cards]);
 
-  const handleCardClick = (index) => {
-    if (flippedCards.length < 2 && !flippedCards.includes(index) && !matchedCards.includes(index)) {
-      setFlippedCards(prev => [...prev, index]);
-      setCount(prevCount => prevCount + 1);
-    }
-  };
+  const handleCardClick = useCallback(
+    (index) => {
+      if (
+        flippedCards.length < 2 &&
+        !flippedCards.includes(index) &&
+        !matchedCards.includes(index)
+      ) {
+        setFlippedCards((prev) => [...prev, index]);
+        setCount((prevCount) => prevCount + 1);
+      }
+    },
+    [flippedCards, matchedCards, setCount]
+  );
 
   return (
     <>
     <div className='wrapper'>
       <div className='header'>
         <NouvellePartie
-          setDifficulty={setDifficulty}
-          setCards={setCards}
-          setFlippedCards={setFlippedCards}
-          setMatchedCards={setMatchedCards}
-          setCount={setCount}
-          difficulty={difficulty}
+          resetGame={resetGame}
         />
         <DifficultyButton
           setDifficulty={setDifficulty}
