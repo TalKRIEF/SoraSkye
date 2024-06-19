@@ -73,7 +73,6 @@ function Game({count, setCount}) {
       />
       <div className='gameboard-container'>
         <div className={`${difficulty === 3 ? 'easy-grid' : difficulty === 6 ? 'game-board-normal' : 'difficult-grid'}`}>
-        {/* <div className='game-board-normal'> */}
           {cards.map((card, index) => (
             <Card
               key={index}
@@ -83,7 +82,6 @@ function Game({count, setCount}) {
               onClick={() => handleCardClick(index)}
             />
           ))}
-        {/* </div> */}
         </div>
       </div>
     </div>
