@@ -9,7 +9,9 @@ function Congrats({ matchedCards, totalCards, count }) {
     );
   } else if (isGameOver) {
     return (
-      <p className='congrats-text'>Félicitations, vous avez trouvé toutes les paires en <span className='nb-coups-congrats'>{count}</span> coups !</p>
+      <div className='congrats-div'>
+        <p className='congrats-text'>Félicitations, vous avez trouvé toutes les paires en <span className='nb-coups-congrats'>{count}</span> coups !</p>
+      </div>
     )
   }
 }

@@ -17,6 +17,65 @@
   text-align: center;
 }
 
+.card {
+  width: 210px;
+  height: 280px;
+  margin: 6px;
+  perspective: 1000px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.04);
+}
+
+.card-inner {
+  border-radius: 20px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s;
+  transform-style: preserve-3d;
+  box-sizing: border-box;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card-front {
+  background: #e0e1e4;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+
+}
+
+.card-back img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+
 .Main-title {
   color: rgb(13, 27, 44);
   font-size: 1.75em;
@@ -105,8 +164,7 @@
 .footer {
   margin-top: 6vh;
   text-align: center;
-  padding: 8px;
-  background-color: #648fb9;
+  padding: 1.5rem;
   width: 100%;
 }
 
@@ -118,7 +176,7 @@
 
 .lien-insta {
   text-decoration: none;
-  color: yellow;
+  color: rgb(103, 228, 245);
 }
 
 .counter-color {
