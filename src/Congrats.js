@@ -5,7 +5,7 @@ function Congrats({ matchedCards, totalCards, count }) {
 
   if ((isGameOver && count === totalCards)) {
     return (
-      <p>Bravo ! Vous avez réussi à trouver toutes les paires en le minimum de coups possible, chapeau !</p>
+      <p className='congrats-text'>Bravo ! Vous avez réussi à trouver toutes les paires en le minimum de coups possible, chapeau !</p>
     );
   } else if (isGameOver) {
     return (
