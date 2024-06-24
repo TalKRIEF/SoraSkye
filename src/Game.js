@@ -54,6 +54,7 @@ function Game({count, setCount}) {
     <>
     <div className='wrapper'>
       <div className='header'>
+        <Counter count={count} />
         <NouvellePartie
           resetGame={resetGame}
         />
@@ -64,7 +65,6 @@ function Game({count, setCount}) {
           setMatchedCards={setMatchedCards}
           setCount={setCount}
         />
-        <Counter count={count} />
       </div>
       <Congrats
         matchedCards={matchedCards}

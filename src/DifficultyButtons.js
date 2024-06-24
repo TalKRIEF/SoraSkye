@@ -11,9 +11,9 @@ const DifficultyButton = ({setDifficulty, setCards, setFlippedCards, setMatchedC
   }
   return (
     <>
-      <button className='difficulty-button' onClick={() => handleDifficultyChange(3)}>Facile</button>
-      <button className='difficulty-button' onClick={() => handleDifficultyChange(6)}>Normal</button>
-      <button className='difficulty-button' onClick={() => handleDifficultyChange(12)}>Difficile</button>
+      <button className='difficulty-button easy' onClick={() => handleDifficultyChange(3)}>Facile</button>
+      <button className='difficulty-button medium' onClick={() => handleDifficultyChange(6)}>Normal</button>
+      <button className='difficulty-button hardaf' onClick={() => handleDifficultyChange(12)}>Difficile</button>
     </>
   );
 }

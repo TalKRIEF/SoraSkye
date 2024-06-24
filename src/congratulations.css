@@ -1,0 +1,9 @@
+.congrats-div {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  border-radius: 20px;
+  background-color: transparent;
+}

@@ -4,11 +4,11 @@
   box-sizing: border-box;
 }
 
-.header {
+/* .header {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .App {
   display: flex;
@@ -132,18 +132,34 @@
   margin-top: 2vh;
   font-size: 20px;
   color: #6e81da;
+  animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
 
 .nb-coups-congrats {
   font-size: 24px;
   color: white;
+  animation: slideIn 2s ease-out forwards;
 }
 
 .compteur {
   text-align: center;
-  display: inline-block;
   font-size: 16px;
   font-weight: bold;
+  margin: 0 auto;
+  border-radius: 25px;
+  margin-top: 2vh;
 }
 
 
@@ -181,6 +197,7 @@
 
 .counter-color {
   color: rgb(174, 236, 216);
+  font-size: 22px;
 }
 
 .nb-coups {
@@ -193,6 +210,10 @@
 /* Pour les tablettes en mode paysage */
 @media (max-width: 1024px) {
   .compteur {
+    font-size: 10px;
+  }
+
+  .nb-coups-congrats {
     font-size: 14px;
   }
 
@@ -212,10 +233,6 @@
 
 /* Pour les iPad et tablettes en mode portrait */
 @media (max-width: 768px) {
-  .compteur {
-    font-size: 12px;
-  }
-
   .game-board {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -228,12 +245,25 @@
   .banner {
     padding: 25px;
   }
+
+  .congrats-text {
+    font-size: 12px;
+  }
+
+
+  .App {
+    height: 100vh;
+  }
 }
 
 /* Pour les grands téléphones en mode paysage */
 @media (max-width: 600px) {
   .compteur {
     font-size: 10px;
+  }
+
+  .counter-color {
+    font-size: 14px;
   }
 
   .game-board {

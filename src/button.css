@@ -1,3 +1,7 @@
+.button-container {
+  position: relative;
+}
+
 .newGameButton {
   background-color: #4CAF50;
   border: none;
@@ -26,6 +30,7 @@
 }
 
 .difficulty-button {
+  position: relative;
   margin-left: 2vw;
   margin-right: 2vw;
   padding: 16px 32px;
@@ -48,7 +53,6 @@
   background-color: rgb(29, 76, 131);
   transform: scale(0.95);
 }
-
 
 /* RESPONSIVE PARTIE */
 
