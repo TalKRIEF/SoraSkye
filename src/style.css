@@ -58,10 +58,16 @@ html, body {
   backface-visibility: hidden;
   border-radius: 16px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }
 
 .card-front {
-  background: #e0e1e4;
+  background-color: rgb(205, 216, 228);
+  /* background: url('imgs/clipscover.png');
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center; */
+
 }
 
 .card-back {
@@ -70,7 +76,6 @@ html, body {
   justify-content: center;
   align-items: center;
   font-size: 24px;
-
 }
 
 .card-back img {
@@ -89,7 +94,7 @@ html, body {
 
 .Secondary-title {
   color: #c2d6dd;
-  font-size: 16px;
+  font-size: 1.5vw;
   font-family: "Edu AU VIC WA NT Pre", cursive;
 
 }
@@ -176,8 +181,8 @@ html, body {
   margin: 0;
   color: #c2d6dd;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 2vw;
+  font-weight: 600;
 }
 
 #root {
