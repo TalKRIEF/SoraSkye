@@ -252,7 +252,7 @@ html, body {
 
   .card {
     width: 20vw;
-    height: 30vh;
+    height: 26vh;
   }
 
   .difficult-grid {
@@ -278,11 +278,6 @@ html, body {
   .congrats-text {
     font-size: 12px;
   }
-
-
-  /* .App {
-    height: 100vh;
-  } */
 }
 
 /* Pour les grands téléphones en mode paysage */
