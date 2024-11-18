@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Game from './Game';
 import Footer from './Footer';
 import Welcome from './Welcome';
-// import Navbar from './Navbar';
+
 
 function App() {
   const [count, setCount] = useState(0);

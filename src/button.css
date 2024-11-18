@@ -59,7 +59,7 @@
 @media (max-width: 600px) {
 
   .newGameButton {
-    padding: 8px 10px;
+    padding: 10px 10px;
     font-size: 10px;
     border-radius: 10px;
   }
@@ -67,8 +67,9 @@
   .difficulty-button {
     margin-left: 2vw;
     margin-right: 2vw;
-    padding: 8px 10px;
-    font-size: 8px;
+    padding: 10px 20px;
+    font-size: 10px;
+    border-radius: 10px;
   }
 }
 
@@ -76,7 +77,7 @@
 @media (max-width: 480px) {
 
   .newGameButton {
-    padding: 8px 10px;
+    padding: 10px 10px;
     font-size: 10px;
     border-radius: 10px;
   }
@@ -84,7 +85,7 @@
   .difficulty-button {
     margin-left: 2vw;
     margin-right: 2vw;
-    padding: 8px 10px;
-    font-size: 8px;
+    padding: 10px 20px;
+    font-size: 10px;
   }
 }

@@ -1,14 +1,14 @@
 * {
-  margin: 0;
+  /* margin: 0; */
   padding: 0;
   box-sizing: border-box;
 }
 
-/* .header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
 
 .App {
   display: flex;
@@ -17,9 +17,14 @@
   text-align: center;
 }
 
+.App, .banner, .footer {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 .card {
-  width: 210px;
-  height: 280px;
+  width: 13.5vw;
+  height: 38vh;
   margin: 6px;
   perspective: 1000px;
   cursor: pointer;
@@ -31,7 +36,7 @@
 }
 
 .card-inner {
-  border-radius: 20px;
+  border-radius: 16px;
   position: relative;
   width: 100%;
   height: 100%;
@@ -51,7 +56,7 @@
   height: 100%;
   box-sizing: border-box;
   backface-visibility: hidden;
-  border-radius: 20px;
+  border-radius: 16px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -71,7 +76,7 @@
 .card-back img {
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 16px;
   object-fit: cover;
 }
 
@@ -83,13 +88,16 @@
 }
 
 .Secondary-title {
-  color: rgb(247, 247, 247);
+  color: #c2d6dd;
   font-size: 16px;
+  font-family: "Edu AU VIC WA NT Pre", cursive;
+
 }
 
 .banner {
   padding: 100px;
-  background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('/imgs/compressed-banner.webp');
+  /* background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('/imgs/compressed-banner.webp'); CHEMIN POUR DEPLOIEMENT */
+  background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('imgs/compressed-banner.webp'); /* PATH POUR LOCALHOST */
   background-size: cover;
   background-position: 100% 10%;
 }
@@ -106,7 +114,7 @@
 .easy-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-gap: 2vw;
   margin: 0 auto;
   width: auto;
 }
@@ -114,7 +122,7 @@
 .game-board-normal {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
+  grid-gap: 2vw;
   margin: 0 auto;
   width: auto;
 }
@@ -122,7 +130,7 @@
 .difficult-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-gap: 10px;
+  grid-gap: 2vw;
   margin: 0 auto;
   width: auto;
 }
@@ -164,11 +172,12 @@
 
 
 .banner h1 {
+  font-family: "Edu AU VIC WA NT Pre", cursive;
   margin: 0;
-  color: white;
+  color: #c2d6dd;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 #root {
@@ -178,7 +187,7 @@
 }
 
 .footer {
-  margin-top: 6vh;
+  margin-top: 12vh;
   text-align: center;
   padding: 1.5rem;
   width: 100%;
@@ -206,6 +215,21 @@
 
 /* RESPONSIVE PART */
 
+@media (max-width: 1250px) {
+  .game-board {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card {
+    width: 20vw;
+    height: 40vh;
+  }
+
+  .difficult-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 
 /* Pour les tablettes en mode paysage */
 @media (max-width: 1024px) {
@@ -222,8 +246,8 @@
   }
 
   .card {
-    width: 120px;
-    height: 160px;
+    width: 20vw;
+    height: 30vh;
   }
 
   .difficult-grid {
@@ -238,12 +262,12 @@
   }
 
   .card {
-    width: 80px;
-    height: 120px;
+    width: 20vw;
+    height: 26vh;
   }
 
   .banner {
-    padding: 25px;
+    padding: 36px;
   }
 
   .congrats-text {
@@ -251,9 +275,9 @@
   }
 
 
-  .App {
+  /* .App {
     height: 100vh;
-  }
+  } */
 }
 
 /* Pour les grands téléphones en mode paysage */
@@ -271,8 +295,8 @@
   }
 
   .card {
-    width: 70px;
-    height: 100px;
+    width: 20vw;
+    height: 20vh;
   }
 
   .Main-title {
@@ -297,7 +321,7 @@
   }
 
   .card {
-    width: 60px;
-    height: 90px;
+    width: 18vw;
+    height: 14vh;
   }
 }
